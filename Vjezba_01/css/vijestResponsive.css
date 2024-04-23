@@ -1,0 +1,108 @@
+@media (max-width:1250px) {
+    .novost-header-section{
+        max-height: 450px;
+    }
+
+    .novost-header-section .naslovnica-naslov{
+        font-size: 2.6rem;
+        bottom: 4%;
+        left: 4%;
+    }
+
+    #novost-podatci-h2{
+        font-size: 1.4rem;
+        width: 100%;
+    }
+
+    .novost-podatci{
+        width: 70%;
+    }
+
+    .panamera2 img{
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:800px) {
+    .novost-header-section .naslovnica-naslov{
+        white-space: wrap;
+        transform: translateY(-10%);
+        font-size: 2rem;
+    }
+
+    .novost-header-section{
+        max-height: 300px;
+    }
+
+    #novost-podatci-h2{
+        font-size: 1.2rem;
+    }
+
+    #novost-podatci h3{
+        font-size: 1rem;
+    }
+
+    .novost-podatci{
+        width: 90%;
+    }
+
+    .panamera2 label{
+        font-size: 1.1rem;
+        width: 60%;
+    }
+
+    .panamera2 img{
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 680px) {
+    .novost-podatci{
+        flex-direction: column;
+    }
+
+    .novost-podatci h3, .novost-podatci h2{
+        text-align: center;
+    }
+
+    .panamera p, .panamera2 p, .panamera3 p{
+        font-size: 1.15rem;
+        margin: 20px;
+        width: 90%;
+    }
+
+    .panamera-video{
+        width: calc(100% - 30px);
+        padding-bottom: 54.9%;
+        margin: 15px;
+    }
+
+    .panamera2 img{
+        width: calc(100% - 20px);
+        margin: 10px;
+        border-radius: 26px;
+    }
+
+    .panamera2 img{
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .novost-header-section .naslovnica-naslov{
+        font-size: 1.4rem;
+    }
+
+    #novost-podatci-h2{
+        font-size: 1rem;
+    }
+
+    .novost-podatci{
+        width: 90%;
+    }
+
+    .panamera2 label{
+        font-size: 1rem;
+        width: 85%;
+    }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Luka Ružić">
+    <meta name="keywords" content="Muzej, Porsche, Iskustvo">
+    <link rel="stylesheet" href="./../css/lruzic22.css">
+    <link rel="stylesheet" href="../css/anketaResponsive.css">
+    <link rel="stylesheet" href="../css/navigacijaResponsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- za vježbu 2
+    <script src="js/lruzic22.js"></script>
+    -->
+    <title>Anketa</title>
+</head>
+<body>
+    <!-- Obrazac sa 10 različitih različitih vrsta elementata za unos -->
+    <!-- Submit i reset gumb -->
+    <!-- Koristi se post metoda -->
+    <header>
+        <nav>
+            <!-- Sadrži naslov i logo -->
+            <div class="logo">
+                <a href="../index.html"><img src="../resursi/slike/pngwing.com.png" alt=""></a>
+            </div>
+            <div class="izbornik">
+                <ul>
+                    <li>
+                        <a href="../index.html">NASLOVNICA</a>
+                    </li>
+                    <li>
+                        <a href=".././html/dokumentacija.html">DOKUMENTACIJA</a>
+                    </li>
+                    <li>
+                        <a href=".././html/anketaMuzeja.html" id="aktivno">ANKETA</a>
+                    </li>
+                    <li>
+                        <a href="./../html/galerijaSlika.html">GALERIJA</a>
+                    </li>
+                    <li>
+                        <a href="./../html/inventarMuzeja.html">INVENTAR</a>
+                    </li>
+                    <li>
+                        <a href="./../html/oAutoru.html">O AUTORU</a>
+                    </li>
+                </ul>
+            </div>
+                <input type="checkbox" id="nav-check">
+                <label for="nav-check" class="sandwich-gumb">
+                    <span></span>
+                </label>
+                <div class="sideNav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <img src="../resursi/slike/pngwingWhite.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html">NASLOVNICA</a>
+                        </li>
+                        <li>
+                            <a href="../html/dokumentacija.html">DOKUMENTACIJA</a>
+                        </li>
+                        <li>
+                            <a href="./../html/anketaMuzeja.html" class="aktivno">ANKETA</a>
+                        </li>
+                        <li>
+                            <a href="./../html/galerijaSlika.html">GALERIJA</a>
+                        </li>
+                        <li>
+                            <a href="./../html/inventarMuzeja.html">INVENTAR</a>
+                        </li>
+                        <li>
+                            <a href="./../html/oAutoru.html">O AUTORU</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+            <div class="anketa-header-section">
+                <h1 class="naslovnica-naslov">Vaša iskustva</h1>
+            </div>
+    </header>
+    <main>
+       <section class="anketa-section">
+        <h2>Vaše povratne informacije</h2>
+        <span>Ako ste već posjetili naš muzej u Stuttgartu, voljeli bismo da odvojite 5 minuta vremena i ispunite ovaj obrazac kako bismo naučili kako poboljšati korisničko iskustvo</span>
+        <form id="forma" action="https://spider.foi.hr/OWT/materijali/ispis_forme.php" method="post">
+            <!--
+                - Ime, prezime <text> +
+                - Datum posjeta <date> +
+                - godine <select> +
+                - Email adresa <email> + 
+                - Iskustvo posjeta <range> +
+                - Biste li nas posjetili opet <radio> + 
+                - S koliko drugih ljudi ste posjetili muzej <number> +
+                - Opis vašeg iskustva <textarea> +
+                - Reset gumb <reset> +
+                - Submit <submit> +
+            -->
+            <div class="prvi-red">
+                <div>
+                    <label for="ime">Ime:</label>
+                    <input type="text" name="ime" id="ime" minlength="2" maxlength="35" placeholder="Marko" required autofocus>
+                </div>
+                <div>
+                    <label for="prezime">Prezime:</label>
+                    <input type="text" name="prezime" minlength="2" maxlength="35"  id="prezime" placeholder="Horvat" required>
+                </div>
+                <div>
+                    <label for="email">Email adresa:</label>
+                    <input type="email" name="email" id="email" placeholder="vaša.adresa@email.com" required>
+                </div>
+                <div>
+                    <label for="godine">Dob:</label>
+                    <input class="godine" type="number" name="godine" id="godine" placeholder="28" min="2" max="120">
+                </div>
+                
+            </div>
+
+            <hr class="sectionDivide">
+
+            <div class="drugi-red">
+                <label for="ocjena">Kako biste ocijenili Vaše iskustvo?</label><br>
+                <div>
+                    <div class="range-opis">
+                        <span>Užasno!</span>
+                        <span>Ni dobro, ni loše!</span>
+                        <span>Odlično!</span>
+                    </div>
+                    <input type="range" name="ocjena" id="ocjena">
+                </div>
+            </div>
+
+            <hr class="sectionDivide">
+            
+            <div class="treci-red">
+                <div>
+                    <label for="group-size">S koliko drugih ljudi ste nas posjetili zadnji puta?</label>
+                    <select id="group-size" name="group-size" required>
+                        <option value="">Izaberi</option>
+                        <optgroup label="Mala grupa">
+                            <option value="najmanja-grupa">&lt; 4</option>
+                            <option value="mala-grupa">4 - 6</option>
+                            <option value="srednje-mala-grupa">7-10</option>
+                        </optgroup>
+                        <optgroup label="Velika grupa">
+                            <option value="srednja-grupa">11-14</option>
+                            <option value="veca-grupa">14-18</option>
+                            <option value="najveca-grupa">19 &gt; </option>
+                        </optgroup>
+
+                    </select>
+                </div>
+                <div class="odabir">
+                    <span>Biste li nas posjetili ponovo?</span>
+                    <div>
+                        <label for="posjetite-opet">Da</label>
+                        <input type="radio" value="da" name="posjetite-opet" id="posjetite-opet" required>
+                        <label for="posjetite-opet">Ne</label>
+                        <input type="radio" value="ne" name="posjetite-opet" required>
+                        <label for="posjetite-opet">Nisam siguran/na</label>
+                        <input type="radio" value="idunno" name="posjetite-opet" required checked>
+                    </div>
+                </div>
+            </div>
+            <hr class="sectionDivide">
+            <div class="treci-a-red">
+                <div>
+                    <label for="datum">Možete li nam dati približan datum kad ste nas posjetili?</label>
+                    <input type="date" name="datum" id="datum" required>
+                </div>
+                <div>
+                    <label for="feedback">Biste li željeli da vam se javimo u vezi povratne informacije?</label>
+                    <input type="checkbox" name="feedback" id="feedback">
+                </div>
+            </div>
+            <hr class="sectionDivide">
+            
+            <div class="cetvrti-red">
+                <label for="opis">Možete li nam opisati Vaše iskustvo u Porsche muzeju?</label>
+                <textarea name="opis" id="opis" placeholder="Nije obavezno"></textarea>
+            </div>
+            <hr class="sectionDivide">
+            <div class="cetvrti-a-red">
+                <label for="datoteka">Ako želite podijeliti svoju najbolju sliku s nama, možete ju objaviti ovdje</label><br class="slika-input">
+                <input type="file" name="datoteka">
+            </div>
+            
+            <hr class="sectionDivide">
+
+            <div class="peti-red">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+    </main>
+    <footer>
+        <div>
+            <a href="https://creativecommons.org/licenses/by/4.0/">
+                <img src="../resursi/slike/HTML5.png" alt="" />
+            </a>
+            <a href="">
+                <img src="../resursi/slike/by.png" alt="">
+            </a>
+        </div>
+        <a href="">
+            <p>2024 &copy; Luka Ružić</p>
+        </a>
+    </footer>
+</body>
+</html>

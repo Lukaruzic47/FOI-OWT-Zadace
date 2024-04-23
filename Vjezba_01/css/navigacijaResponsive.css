@@ -1,0 +1,174 @@
+@media (max-width: 1600px){
+    .naslovnica-opis p{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1360px) {
+	.izbornik {
+		margin-right: 3%;
+	}
+
+	.logo {
+		margin-left: 3%;
+	}
+
+	.izbornik ul a {
+		font-size: 1.22rem;
+	}
+
+	.izbornik ul {
+		padding-left: 18px;
+	}
+
+	.logo img {
+		width: 140px;
+	}
+
+	nav {
+		height: 110px;
+	}
+
+    .header-section {
+		height: 400px;
+		background-position: 50% 70%;
+	}
+
+	.naslovnica-naslov {
+		font-size: 2.8rem;
+		bottom: 6%;
+	}
+
+    .naslovnica-opis p{
+        font-size: 1rem;
+    }
+
+    main{
+        width: 90%;
+    }
+}
+
+@media (min-width: 1150px) {
+    .sideNav {
+        display: none;
+	}
+    
+	#nav-check:checked ~ .sideNav {
+        width: 0;
+	}
+
+    .sandwich-gumb {
+        display: none;
+    }
+}
+
+@media (max-width: 1180px) {
+	.izbornik ul > li {
+		display: none;
+	}
+
+	.izbornik #nav-check {
+		display: block;
+	}
+
+	.sandwich-gumb {
+		display: flex;
+	}
+
+	.header-section {
+		height: 400px;
+		background-position: 50% 70%;
+        background-size: 85% auto;
+	}
+
+	.naslovnica-naslov {
+		font-size: 2.5rem;
+		bottom: 6%;
+	}
+
+    .opis-slika{
+        flex-wrap: wrap;
+    }
+
+    .naslovnica-opis{
+        padding-right: 0px;
+        width: 80%;
+    }
+
+    .slikaMuzeja{
+        width: 80%;
+		min-width: 1px;
+    }
+
+	.istaknuto{
+		height: 400px;
+		min-width: 250px;
+		overflow: hidden;
+	}
+
+	.istaknuto img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media (max-width: 1133px){
+	.slikaMuzeja{
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 800px) {
+	#nav-check:checked ~ .sideNav {
+		width: 42%;
+	}
+
+    .naslovnica-naslov {
+		font-size: 2.2rem;
+        white-space: nowrap;
+        transform: translateX(-50%);
+        left: 50%;
+	}
+
+    .header-section {
+		height: 300px;
+        background-position: 50% 85%;
+	}
+
+    nav {
+		height: 100px;
+	}
+}
+
+@media (max-width: 500px) {
+	#nav-check:checked ~ .sideNav {
+		width: 75%;
+	}
+
+    .naslovnica-naslov {
+		font-size: 1.8rem;
+	}
+
+    .header-section {
+		height: 220px;
+	}
+
+	.slikaMuzeja{
+        width: 90%;
+    }
+
+	.naslovnica-opis{
+        width: 90%;
+    }
+}
+
+@media (max-width: 375px) {
+    .naslovnica-naslov {
+		font-size: 1.4rem;
+        
+	}
+
+    .header-section {
+		height: 200px;
+	}
+}

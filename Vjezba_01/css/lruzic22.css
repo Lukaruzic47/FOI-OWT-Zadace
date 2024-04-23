@@ -1,0 +1,1009 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+* {
+	margin: 0;
+	font-family: "Quicksand", sans-serif;
+	box-sizing: border-box;
+}
+
+
+/* ---------------- Navigacija ---------------- */
+
+nav {
+	width: 100%;
+	display: flex;
+	height: 120px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	height: auto;
+	width: auto;
+	margin-left: 5%;
+}
+
+.logo a {
+	box-sizing: border-box;
+}
+
+.logo img {
+	width: 160px;
+	height: auto;
+}
+
+.izbornik {
+	display: flex;
+	flex-direction: row;
+	margin-right: 5%;
+	flex-wrap: wrap;
+}
+
+.izbornik a {
+	text-decoration: none;
+	font-size: 1.4rem;
+	color: rgba(0, 0, 0, 0.85);
+	padding: 4px 7px;
+}
+
+.izbornik li {
+	list-style-type: none;
+	padding-left: 24px;
+}
+
+.izbornik ul {
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+}
+
+.ponistiBootstrap > ul {
+	margin: 0;
+}
+
+#aktivno, #aktivno2, .aktivno {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+	color: white;
+}
+
+/* ---------------- Side nav ---------------- */
+
+.sideNav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	background-color: #3b3b3b;
+	overflow-x: hidden;
+	transition: 0.5s;
+    opacity: 1;
+	padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.sideNav li:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.sideNav li{
+    list-style-type: none;
+    margin-top: 16px;
+}
+
+.sideNav ul{
+    padding-left: 0;
+}
+
+.sideNav li a{
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: white;
+    padding: 4px 7px;
+}
+
+.sideNav img{
+    width: 120px;
+}
+
+/* ---------------- Gumbić za navigaciju ---------------- */
+
+.izbornik #nav-check {
+	display: none;
+}
+
+.sandwich-gumb {
+	height: 34px;
+	width: 44px;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	border-radius: 4px;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.sandwich-gumb span {
+	display: block;
+	height: 2px;
+	width: 20px;
+	background-color: black;
+	position: relative;
+}
+
+#nav-check {
+	display: none;
+}
+
+.sandwich-gumb span::before,
+.sandwich-gumb span::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	left: 0;
+}
+
+.sandwich-gumb span::before {
+	top: -6px;
+}
+.sandwich-gumb span::after {
+	top: 6px;
+}
+
+#nav-check:checked ~ .sandwich-gumb span {
+	background-color: transparent;
+}
+
+#nav-check:checked ~ .sandwich-gumb span::before {
+	top: 0;
+	transform: rotate(45deg);
+}
+
+#nav-check:checked ~ .sandwich-gumb span::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+#nav-check:checked ~ .sideNav {
+    width: 30%;
+}  
+
+/* ---------------- Hover pravila ---------------- */
+
+li > a:hover,
+#aktivno:hover, #aktivno2:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 4px;
+	color: white;
+}
+
+li > a:active,
+#aktivno:active, #aktivno2:active {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+	color: white;
+}
+
+.sandwich-gumb:hover{
+    transform: scale(1.15);
+}
+
+/* ---------------- Naslovnica header ---------------- */
+
+.header-section{
+    position: relative;
+    margin-top: 2px;
+    height: 500px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    background-image: url(https://files.porsche.com/filestore/image/multimedia/none/992-gt3-modelexplorer/normal/6bcbc899-51bd-11eb-80d1-005056bbdc38;sP;twebp065/porsche-normal.webp);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: auto;
+}
+
+.naslovnica-naslov{
+    font-family: "Michroma", sans-serif;
+    position: absolute;
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: #5c5c5c;
+    bottom: 8%;
+    left: 8%;
+    transform: translateY(-50%);
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------- naslovnica-opis ---------------- */
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3{
+    font-family: "Michroma", sans-serif;
+    margin-bottom: 20px;
+    color: #5c5c5c;
+}
+
+h2{
+    font-family: "Michroma", sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: #5c5c5c;
+}
+
+.opis-slika{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    height: auto;
+}
+
+div.drzac{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+br{
+    margin-bottom: 20px;
+}
+
+.naslovnica-opis{
+    width: 48%;
+    height: fit-content;
+    border-radius: 8px;
+    padding-top: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    /* min-width: 500px;*/
+}
+
+.slikaMuzeja{
+    width: 35%;
+    min-width: 520px;
+}
+
+.slikaMuzeja img{
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.35);
+}
+
+.sekcijaKarta{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.sekcijaKarta iframe{
+    width: 100%;
+    border-radius: 8px;
+    height: 64vh;
+}
+
+.sectionDivide{
+    margin: 20px 0px;
+    width: 100%;
+    height: 2px;
+    color: rgba(0, 0, 0, 0.479);
+}
+
+/* ---------------- sekcija novosti ---------------- */
+
+.novosti{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 90%;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.istaknuto{
+    width: 330px;
+    height: 450px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 15px;
+    min-width: 300px;
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0;
+    z-index: 1;
+    color: black;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.overlay:hover{
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+h4{
+    margin-top: 12px;
+    font-family: "Michroma", sans-serif;
+    margin-left: 6%;
+    color: #5c5c5c;
+}
+
+.istaknuto p{
+    padding: 6%;
+}
+
+[alt="slika muzeja"], [alt="stari porsche"]{
+    height: 210px;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+h6{
+    font-size: 1.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* ---------------- footer ---------------- */
+
+footer{
+    height: 150px;
+    box-shadow: -12px 2px 7px rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer img{
+    height: 75px;
+}
+
+/* ---------------- Anketa header ---------------- */
+
+.anketa-header-section, .galerija-header{
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    margin-top: 2px;
+    position: relative;
+    height: 150px;
+}
+
+.naslovnica-naslov{
+    font-family: "Michroma", sans-serif;
+    position: absolute;
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: #5c5c5c;
+    bottom: 8%;
+    left: 8%;
+    transform: translateY(-50%);
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.anketa-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+form > div{
+    padding-top: 20px;
+}
+
+.anketa-section > span{
+    margin-bottom: 30px;
+}
+
+.anketa-section form{
+    margin-bottom: 30px;
+    top: 20%;
+}
+
+form .sectionDivide{
+    margin-top: 50px;
+}
+
+.prvi-red input, select, .treci-red .broj-ljudi, [type="date"]{
+    padding: 15px 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    margin: 5px 25px 5px 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.treci-red [type="radio"], .treci-a-red [type="checkbox"]{
+    margin: 5px 18px;
+}
+
+.anketa-section select{
+    padding: 15px 35px;
+    background-color: white;
+}
+
+.prvi-red label{
+    margin: 5px 5px 5px 25px;
+}
+
+.prvi-red{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.prvi-red div{
+    display: inherit;
+    align-items: center;
+    width: 100%;
+    flex: 2 0 25%;
+}
+
+.prvi-red div:nth-child(4){
+    flex: 15%;
+}
+
+.prvi-red div input{
+    width: 100%;
+}
+
+.cetvrti-red, .drugi-red{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.drugi-red > div{
+    width: 80%;
+    margin-left: 30px;
+}
+
+[type="range"]{
+    width: 100%;
+}
+
+.odabir span{
+    margin-right: 20px;
+}
+
+.range-opis{
+    display: flex;
+    justify-content: space-between;
+}
+
+.treci-red, .treci-a-red{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.treci-red div, .treci-a-red div{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.odabir{
+    display: flex;
+    flex-direction: row;
+}
+
+textarea{
+    height: 200px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.peti-red{
+    display: flex;
+    justify-content: end;
+}
+
+.peti-red button{
+    padding: 10px 7%;
+    font-size: 1.2rem;
+    margin-left: 30px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.peti-red button:hover{
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+}
+
+.peti-red button:active{
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+}
+
+form input:focus, form select:focus{
+    transition: 0.2s ease-in-out;
+    border-radius: 12px;
+}
+
+form input:not(:focus), form select:not(:focus){
+    transition: 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.slika-input{
+    display: none;
+}
+
+/* ---------------- Galerija slika ---------------- */
+
+.galerija-header{
+    height: 150px;
+    position: relative;
+}
+
+section.galerija{
+    width: 100%;
+}
+
+/* ---------------- Opis slika ---------------- */
+.grid-container h5{
+    font-size: 1.2rem;
+    font-family: "Michroma", sans-serif;
+}
+
+.grid-container figure{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.grid-container figcaption{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    height: calc(100% - 3px);
+    width: 100%;
+    opacity: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, black);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    color: white;
+}
+
+figcaption p{
+    margin-bottom: 4%;
+    margin-left: 4%;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.8);
+    margin-right: 4%;
+}
+
+figcaption h5{
+    margin-bottom: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.grid-container figcaption{
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.grid-container div img{
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ---------------- Pozicije divova ---------------- */
+
+.grid-container{
+    display: grid;
+    width: 100%;
+    grid: repeat(8, 370px) / auto auto auto auto;
+    height: auto;
+    margin-bottom: 100px;
+    gap: 15px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.prva-slika, .druga-slika, .treca-slika, .cetvrta-slika, .peta-slika, .sesta-slika, .sedma-slika, .osma-slika, .deveta-slika, .deseta-slika, .slika11, .slika12{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.prva-slika{
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+.prva-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(../resursi/slike/1990_porsche_911_carrera_4.jpg);
+    background-position: 0% 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.druga-slika{
+    grid-area: 1 / 3 / span 2 / span 2;
+}
+
+.druga-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0540105-6423-4ac9-a23e-f1f5991490e7/ddbji2e-98fa9b37-a379-4a54-8053-8b385233fd06.jpg/v1/fit/w_828,h_1104,q_70,strp/sculpture_near_porsche_museum__stuttgart__germany_by_kamikazejackie_ddbji2e-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYzMiIsInBhdGgiOiJcL2ZcL2MwNTQwMTA1LTY0MjMtNGFjOS1hMjNlLWYxZjU5OTE0OTBlN1wvZGRiamkyZS05OGZhOWIzNy1hMzc5LTRhNTQtODA1My04YjM4NTIzM2ZkMDYuanBnIiwid2lkdGgiOiI8PTEyMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.pRm-6uzoHSLiVaRpJZoBGH-6MhX1Xsztw_BJcLTnRe0);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.treca-slika{
+    grid-area: 2 / 1 / span 2 / span 2;
+}
+
+.treca-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(https://maffin.co.uk/wp-content/uploads/2023/06/porsche-museum-800x600.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.cetvrta-slika{
+    grid-area: 3 / 3 / span 1 / span 2;
+}
+
+.cetvrta-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(../resursi/slike/porsche-4594693_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.peta-slika{
+    grid-area: 4 / 1 / span 1 / span 2;
+}
+
+.peta-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(../resursi/slike/porsche-3495405_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.sesta-slika{
+    grid-area: 4 / 3 / span 2 / span 2;
+}
+
+.sesta-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(../resursi/slike/porsche-5665390_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.sedma-slika{
+    grid-area: 5 / 1 / span 2 / span 2;
+}
+
+.sedma-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(../resursi/slike/stuttgartMuseum.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.osma-slika{
+    grid-area: 7 / 1 / span 1 / span 3;
+}
+
+.osma-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(../resursi/slike/porsche-normal.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.deveta-slika{
+    grid-area: 7 / 4 / span 1 / span 1;
+}
+
+.deveta-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(https://www.hotelmartinsklause.de/images/Attractions/porsche-1-big.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+
+.deseta-slika{
+    grid-area: 6 / 3 / span 1 / span 2;
+}
+
+.deseta-slika div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(https://images.t-online.de/2023/04/HYyjYReJOGi3/0x209:4000x2250/fit-in/__WIDTH__x0/der-911-sport-classic-porsche-zeigt-im-museum-unter-anderem-die-auf-1250-exemplare-limitierte-kleinserie-der-porsche-exclusive-manufaktur.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.slika11{
+    grid-area: 8 / 3 / span 1 / span 2;
+}
+
+.slika11 div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(https://images.squarespace-cdn.com/content/v1/5fe51dc8be0dc5597c4000ad/1616866588239-WW147DUUWV20QSM2E70Q/Porsche+Museum+Stuttgart+%2873%29.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.slika12{
+    grid-area: 8 / 1 / span 1 / span 2;
+}
+
+.slika12 div{
+    height: calc(100% - 4px);
+    transition: transform 0.3s ease-in-out;
+    background-image: url(https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/porsche_newsroom/Historie/911-Nr-57/Sonderschau/b-DC3_0329.jpg/jcr:content/b-DC3_0329.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.grid-container div div, .grid-container figcaption{
+    border-radius: 4px;
+}
+
+/* ---------------- galerija hover pravila ---------------- */ 
+
+.grid-container figure:hover ~ div, .grid-container figure:hover > figcaption{
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+/* ---------------- tablica ---------------- */
+table{
+    /* border: 1px solid #3b3b3b; */
+    margin: 22px;
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    border-spacing: 0px;
+    color: white;
+}
+
+table td, table th{
+    padding: 20px;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.555);
+}
+
+.tamno{
+    background-color: #7a7a7a;
+}
+
+tr td:last-child{
+    padding: 0;
+}
+
+tr td:nth-child(3){
+    max-width: 500px;
+}
+
+tr td img{
+    width: 350px;
+}
+
+.podatci-tablica, #naziv-tablica, .slika-tablica{
+    background-color: #a1a1a1;
+    color: white;
+}
+
+/* ---------------- Novost ---------------- */ 
+
+.novost-header-section{
+    position: relative;
+    margin-top: 2px;
+    height: 600px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    background-image: url("../resursi/slike/the-20new-202024-20porsche-20panamera-206.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.novost-header-section h1{
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.65);
+    margin-right: 50px;
+}
+
+.novost-podatci{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+}
+
+.novost-podatci h2{
+    margin: 0px 20px 0 0;
+    font-size: 1.6rem;
+    text-align: right;
+    width: 90%;
+}
+
+.novost-podatci h3{
+    margin: 6px 20px 0 0;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.panamera, .panamera2, .panamera3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panamera h2, .panamera2 h2, .panamera3 h2{
+    margin: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.panamera p, .panamera2 p, .panamera3 p{
+    font-size: 1.25rem;
+    margin: 30px;
+    width: 80%;
+    line-height: 1.5;
+}
+
+.panamera2 img{
+    width: calc(100% - 60px);
+    margin: 30px;
+    border-radius: 26px;
+}
+
+.panamera-video{
+    position: relative;
+    width: calc(100% - 60px);
+    padding-bottom: 54.9%;
+    margin: 30px;
+}
+
+.panamera-video iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.panamera3{
+    margin-bottom: 100px;
+}
+
+.panamera2 img{
+    opacity: 0.8;
+    transform: scale(0.7);
+    width: 100%;
+    animation: focus-image 2s ease-in-out forwards alternate infinite 2s;
+}
+
+.panamera2 img:hover{
+    animation-play-state: paused;
+}
+
+.panamera2 input{
+    display: none;
+}
+
+.panamera2 input:checked ~ img{
+    animation: none;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.panamera2 label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 45px;
+    width: 40%;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.panamera2 label:hover{
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+}
+
+.panamera2 label:active{
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+}
