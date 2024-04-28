@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Luka Ružić">
+    <meta name="keywords" content="Muzej, Porsche, Inventar">
+    <link rel="stylesheet" href="./../css/lruzic22.css">
+    <link rel="stylesheet" href="../css/navigacijaResponsive.css">
+    <link rel="stylesheet" href="../css/tablicaResponsive.css">
+    <link rel="stylesheet" href="../css/anketaResponsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Inventar muzeja</title>
+</head>
+<body>
+    <header>
+        <script src="../js/lruzic22.js"></script>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="../resursi/slike/pngwing.com.png" alt=""></a>
+            </div>
+            <div class="izbornik">
+                <ul>
+                    <li>
+                        <a href="index.html">NASLOVNICA</a>
+                    </li>
+                    <li>
+                        <a href="dokumentacija.html">DOKUMENTACIJA</a>
+                    </li>
+                    <li>
+                        <a href="anketaMuzeja.html">ANKETA</a>
+                    </li>
+                    <li>
+                        <a href="galerijaSlika.html">GALERIJA</a>
+                    </li>
+                    <li>
+                        <a href="inventarMuzeja.html" id="aktivno">INVENTAR</a>
+                    </li>
+                    <li>
+                        <a href="oAutoru.html">O AUTORU</a>
+                    </li>
+                </ul>
+            </div>
+            <input type="checkbox" id="nav-check">
+            <label for="nav-check" class="sandwich-gumb">
+                <span></span>
+            </label>
+            <div class="sideNav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <img src="../resursi/slike/pngwingWhite.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">NASLOVNICA</a>
+                    </li>
+                    <li>
+                        <a href="dokumentacija.html">DOKUMENTACIJA</a>
+                    </li>
+                    <li>
+                        <a href="anketaMuzeja.html">ANKETA</a>
+                    </li>
+                    <li>
+                        <a href="galerijaSlika.html">GALERIJA</a>
+                    </li>
+                    <li>
+                        <a href="inventarMuzeja.html" id="aktivno2">INVENTAR</a>
+                    </li>
+                    <li>
+                        <a href="oAutoru.html">O AUTORU</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="anketa-header-section">
+            <h1 class="naslovnica-naslov">Inventar muzeja</h1>
+        </div>
+    </header>
+    <main>
+        <table>
+            <caption id="naslov-tablice"><h3>Popis automobila</h3></caption>
+            <colgroup>
+                <col id="naziv-tablica" class="naziv-tablica">
+                <col span="4" class="podatci-tablica">
+                <col class="slika-tablica">
+            </colgroup>
+            <thead>
+                <tr class="svijetlo">
+                    <th>Naziv</th>
+                    <th>Godina</th>
+                    <th>Opis</th>
+                    <th>Najveća brzina</th>
+                    <th>Snaga</th>
+                    <th>Slika</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tamno">
+                    <td>356 „Nr.1“ Roadster</td>
+                    <td>1948</td>
+                    <td>Prema idejama Ferryja Porschea, u austrijskom gradu Gmündu konstruiran je prvi automobil s imenom Porsche. Dana 8. lipnja 1948. 356 “Br. 1” Roadster dobio je opću radnu dozvolu. To se općenito smatra datumom rođenja marke Porsche</td>
+                    <td>135 km/h</td>
+                    <td>26 kW (35 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-01-356-roadster/image-thumb__17832__mk2-modal-item/1000-D.jpg" alt=""></td>
+                </tr>
+                <tr class="svijetlo">
+                    <td>550 Spyder</td>
+                    <td>1954</td>
+                    <td>Godine 1954. prvi Porsche napravljen posebno za utrke bio je sportski automobil sa središnjim motorom i aluminijskom karoserijom. Ubrzo se ističe pobjedom u klasi i trećim mjestom u ukupnom poretku na Carrera Panamericana protiv konkurenata većeg kapaciteta</td>
+                    <td>220 km/h</td>
+                    <td>81 kW (110 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-02-550-spyder-panamericana/image-thumb__17838__mk2-modal-item/2000-D.jpg" alt=""></td>
+                </tr>
+                <tr class="tamno">
+                    <td>Typ 804</td>
+                    <td>1962</td>
+                    <td>U srpnju 1962. Dan Gurney je pobijedio u Francuskeom Grand Prix-u u trkaćem automobilu Type 804. Također je pobijedio u utrci Solitude u Stuttgartu. Težak 461 kilogram, ovaj lagani jednosjed s novim osmo cilindrenim motorom jedini je trkaći automobil Formule 1 koji je u potpunosti izradio Porsche</td>
+                    <td>270 km/h</td>
+                    <td>132 kW (180 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-03-804-formel-1-1962/image-thumb__17842__mk2-modal-item/2012-D.jpg" alt=""></td>
+                </tr>
+                <tr class="svijetlo">
+                    <td>901 Nr. 57</td>
+                    <td>1964</td>
+                    <td>Najstariji 911 muzeja Porsche izvorno je proizveden kao Porsche 901, ali isporučen kao 911. Signalni crveni automobil nosi broj šasije 57. </td>
+                    <td>210 km/h</td>
+                    <td>96 kW (130 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-04-901-1964/image-thumb__17851__mk2-modal-item/1238-D.jpg" alt=""></td>
+                </tr>
+                <tr class="tamno">
+                    <td>904 Carrera GTS</td>
+                    <td>1964</td>
+                    <td>Porsche 904 sa svojom malom prednjom površinom od samo 1,4 četvornih metara, koji je dizajnirao F.A. Porsche, prvi je Porsche s karoserijom od plastike ojačane staklenim vlaknima. Napravljen je u suradnji s Heinkel Flugzeugbau, tvrtkom za proizvodnju zrakoplova</td>
+                    <td>263 km/h</td>
+                    <td>178 kW (240 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-05-904-carrera-gts/image-thumb__17857__mk2-modal-item/2013-D.jpg" alt=""></td>
+                </tr>
+                <tr class="svijetlo">
+                    <td>911 Carrera 2 Cup</td>
+                    <td>1990</td>
+                    <td>Po prvi put u povijesti, 40 identičnih trkaćih automobila 911 međusobno se natječu na Porsche Carrera Cupu 1990. Na temelju 911 Carrera 2, verzija Cup razvijena je u jesen 1989.</td>
+                    <td>265 km/h</td>
+                    <td>195 kW (265 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-06-911-964-carrera-2-cup/image-thumb__17861__mk2-modal-item/2059-D.jpg" alt=""></td>
+                </tr>
+                <tr class="tamno">
+                    <td>911 Turbo S</td>
+                    <td>1998</td>
+                    <td>Godine 1998. Porsche Exclusive je proizveo 345 automobila iz serije 911 Turbo S. Snaga turbo motora povećana je na 450 KS s power kitom. Karoserija je dobila redizajnirane prednje i stražnje spojlere</td>
+                    <td>300 km/h</td>
+                    <td>331 kW (450 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-07-911-993-turbo-s/image-thumb__17867__mk2-modal-item/7133-D.jpg" alt=""></td>
+                </tr>
+                <tr class="svijetlo">
+                    <td>911 „Sally Carrera“</td>
+                    <td>1998</td>
+                    <td>Film „Auti” iz 2006. godine koji je snimio Pixar govori o trkaćem automobilu u koji se zaljubljuje Sally Carrera, Porsche 911. Pixar izrađuje model crtanog lika u prirodnoj veličini u marketinške svrhe. U roku od sedam mjeseci, Porsche 911 prolazi kroz značajne izmjene kako bi zadržao komični stil</td>
+                    <td>280 km/h</td>
+                    <td>221 kW (300 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-08-911-996-sally-carrera/image-thumb__17872__mk2-modal-item/3093-D.jpg" alt=""></td>
+                </tr>
+                <tr class="tamno">
+                    <td>911 Carrera RS 2.7</td>
+                    <td>1973</td>
+                    <td>Najizrazitija značajka najbržeg njemačkog serijskog automobila svog vremena je stražnji spojler, popularno poznat kao "pačji rep". Porsche je trendseter u korištenju takvih aerodinamičkih značajki</td>
+                    <td>245 km/h</td>
+                    <td>154 kW (210 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-09-911-carrera-rs-2-7-cup/image-thumb__17879__mk2-modal-item/1023-D.jpg" alt=""></td>
+                </tr>
+                <tr class="svijetlo">
+                    <td>911 Carrera RSR</td>
+                    <td>1972</td>
+                    <td>Razvijen za sezonu 1973., 911 Carrera RSR 2.8 već se bavi Corsica Rallyeom krajem 1972. i privremeno služi kao eksperimentalni automobil. U veljači 1973. pobjeđuje na utrci 24 sata Daytone</td>
+                    <td>270 km/h</td>
+                    <td>228 kW (310 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-10-911-carrera-rsr-1973/image-thumb__17884__mk2-modal-item/2042-D.jpg" alt=""></td>
+                </tr>
+                <tr class="tamno">
+                    <td>911 GT1 ‘98</td>
+                    <td>1998</td>
+                    <td>911 GT1, koji je Porsche razvio za rad i upotrebu kupaca u GT motorsportu, ima svoj debi u utrkama 1996. godine. Sadrži prvi jedini vodeno hlađeni motor u sredini, koji osigurava uravnoteženu raspodjelu opterećenja po osovini</td>
+                    <td>310 km/h</td>
+                    <td>404 kW (550 HP)</td>
+                    <td><img src="https://media.porsche.com/mediakit/porsche-museum/01-photos/19-cars/19-11-911-gt1-jever-1998/image-thumb__17886__mk2-modal-item/2081-D.jpg" alt=""></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer>
+        <div>
+            <a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fspider.foi.hr%2FOWT%2F2024%2Fzadaca_01%2Flruzic22%2Fhtml%2FinventarMuzeja.html" target="_blank">
+                <img src="../resursi/slike/HTML5.png" alt="">
+            </a>
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+                <img src="../resursi/slike/by.png" alt="">
+            </a>
+        </div>
+        <a href="">
+            <p>2024 &copy; Luka Ružić</p>
+        </a>
+    </footer>
+</body>
+</html>

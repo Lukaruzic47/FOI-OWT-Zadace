@@ -1,0 +1,35 @@
+@media (max-width:1400px){
+    table{
+        font-size: 1rem;
+    }
+
+    tr td img{
+        width: 220px;
+    }
+}
+
+@media (max-width: 800px) {
+    tr td:nth-child(n+2):nth-child(-n+5), tr th:nth-child(n+2):nth-child(-n+5){
+        display: none;
+    }
+
+    table{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 500px) {
+    table{
+        width: 100%;
+    }
+
+    tr td img{
+        width: 200px;
+    }
+}
+
+@media print {
+    head, header, footer{
+        display: none;
+    }
+}

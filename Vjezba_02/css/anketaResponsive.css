@@ -1,0 +1,142 @@
+@media (max-width: 1600px) {
+    .prvi-red div{
+        flex: 1 0 50%;
+    }
+    
+    .prvi-red div:nth-child(4){
+        flex: 50%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .prvi-red div{
+        flex: 1 0 100%;
+    }
+
+    .prvi-red div{
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .prvi-red input, select{
+        margin: 5px;
+    }
+}
+
+@media (max-width: 920px) {
+    .drugi-red{
+        flex-direction: column;
+    }
+
+    .drugi-red > div{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    form{
+        font-size: 1.1rem;
+    }
+
+    .peti-red button{
+        width: 45%;
+        margin: 0;
+        min-width: 250px;
+    }
+
+    .peti-red button:first-child{
+        margin-right: 20px;
+    }
+
+    .peti-red button:last-child{
+        margin-left: 20px;
+    }
+
+    .peti-red {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .drugi-red span{
+        font-size: 1rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .treci-red div:first-child{
+        flex-direction: column;
+    }
+
+    .anketa-header-section{
+        height: 120px;
+    }
+
+    .odabir{
+        flex-direction: column;
+    }
+
+    .odabir > div{
+        margin-top: 20px;
+    }
+
+    #group-size, #datum{
+        margin-right: 5px;
+    }
+
+    .cetvrti-red{
+        flex-direction: column;
+    }
+
+    .treci-a-red div{
+        flex-direction: column;
+    }
+
+    .treci-a-red div:last-child{
+        padding: 20px;
+    }
+
+    .odabir span{
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    .anketa-header-section .naslovnica-naslov{
+       transform: translateY(-50%) translateX(-50%);
+        top: 50%;
+    }
+}
+
+@media (max-width: 620px) {
+    .peti-red button:first-child{
+        flex: 100%;
+        margin-right: 0;
+    }
+
+    .peti-red button:last-child{
+        margin-left: 0;
+        flex: 100%;
+        margin-top: 20px;
+    }
+
+    .treci-red, .treci-a-red{
+        flex-direction: column;
+    }
+
+    .treci-red div, .treci-a-red div{
+        width: 100%;
+    }
+    
+    .treci-red .broj-ljudi, .treci-a-red [type="checkbox"]{
+        margin: 5px;
+    }
+
+    .slika-input{
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+	.anketa-header-section{
+        height: 80px;
+    }
+}
