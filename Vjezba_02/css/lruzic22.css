@@ -1007,3 +1007,13 @@ tr td img{
     background-color: rgba(0, 0, 0, 0.65);
     color: white;
 }
+
+/* ---------------- Druga zadaća ---------------- */
+
+#switchDesktopMobile{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+}
