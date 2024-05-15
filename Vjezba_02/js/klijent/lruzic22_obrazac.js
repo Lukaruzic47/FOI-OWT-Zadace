@@ -1,7 +1,7 @@
 // Sadrži sve elemente oko validacije obrasca
 
-// Cijela forma mora biti popunjena prije slanja
-// Na pritisak gumba za slanje javlja pogrešku ako nisu svi podatci ispunjeni
+// + Cijela forma mora biti popunjena prije slanja
+// + Na pritisak gumba za slanje javlja pogrešku ako nisu svi podatci ispunjeni
 
 // Poruka se javlja kod elementa koji nije ispunjen
 // label elementi polja koji nisu ispunjeni dobivaju crvenu boju
@@ -23,10 +23,11 @@
 form = document.getElementsByTagName("form");
 form = form[0];
 // dohvati gumb koji u sebi ima atribut type="submit"
-submitButton = document.querySelector('[type="submit"]');
-console.log(submitButton);
+
+var emptyFields = [];
 
 function isFormEmpty(){
+    emptyFields = [];
     // dohvaćamo sve input, textarea i select elemente
     let inputs = document.querySelectorAll("input");
     let textareas = document.querySelectorAll("textarea");
@@ -40,6 +41,7 @@ function isFormEmpty(){
             inputs[i].style.borderColor = "red";
             counter++;
             console.log(inputs[i]);
+            emptyFields.push(inputs[i]);
             isGood = false;
         }
     }
@@ -47,6 +49,7 @@ function isFormEmpty(){
         if (textareas[i].value === "") {
             textareas[i].style.borderColor = "red";
             counter++;
+            emptyFields.push(textareas[i]);
             console.log(textareas[i]);
             isGood = false;
         }
@@ -54,6 +57,7 @@ function isFormEmpty(){
     for (let i = 0; i < select.length; i++) {
         if (select[i].value === "") {
             select[i].style.borderColor = "red";
+            emptyFields.push(select[i]);
             counter++;
             console.log(select[i]);
             isGood = false;
@@ -76,6 +80,23 @@ form.addEventListener("submit", (e) => {
     }
     else{
         e.preventDefault();
+        focusEmptyForm();
+        console.log(emptyFields);
         console.log("Niste popunili sva polja");
     }
 });
+
+
+
+/* ---------------- DRUGI DIO ---------------- */
+
+// Dohvaćamo element koji je prazan i postavljamo element s porukom kod njega
+
+function focusEmptyForm(){
+    if(emptyFields.length > 0){
+        emptyFields[0].focus();
+        emptyFields[0].style.border = "3px solid red";
+    }
+}
+
+console.log(imageInput);
