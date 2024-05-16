@@ -4,7 +4,7 @@
 // + Na pritisak gumba za slanje javlja pogrešku ako nisu svi podatci ispunjeni
 
 // Poruka se javlja kod elementa koji nije ispunjen
-// label elementi polja koji nisu ispunjeni dobivaju crvenu boju
+// + label elementi polja koji nisu ispunjeni dobivaju crvenu boju
 
 // kod datuma nemože se odabrati datum najranije 2 dana u prošlosti i najkasnije 1 mjesec u prošlosti
 
@@ -96,7 +96,24 @@ function focusEmptyForm(){
     if(emptyFields.length > 0){
         emptyFields[0].focus();
         emptyFields[0].style.border = "3px solid red";
+        // provjera je li prazan element u emptyFields tipa input, textarea ili select
+        if(emptyFields[0].tagName === "INPUT" || emptyFields[0].tagName === "TEXTAREA"){
+            modalMessage = "<div class='modalMessage'><p>Potrebno je popuniti ovo polje</p></div>";
+            emptyFields[0].innerHTML += modalMessage;
+            console.log("Ovo je input ili textarea");
+        }
+        else if(emptyFields[0].tagName === "SELECT"){
+            modalMessage = "<div class='modalMessage'><p>Potrebno je odabrati opciju</p></div>";
+            emptyFields[0].innerHTML += modalMessage;
+            console.log("Ovo je select");
+        }
     }
 }
 
-console.log(imageInput);
+// provjeravamo prazne elemente onchange te im uklanjamo crvenu boju ako su popunjeni
+
+form.addEventListener("change", (e) => {
+    if(e.target.value !== ""){
+        e.target.style.border = "1px solid rgba(0, 0, 0, 0.4)";
+    }
+});
