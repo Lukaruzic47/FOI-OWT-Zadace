@@ -1,0 +1,118 @@
+body {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.izbornik {
+    margin-right: 3%;
+}
+
+.logo {
+    margin-left: 3%;
+}
+
+.izbornik ul a {
+    font-size: 1.22rem;
+}
+
+.izbornik ul {
+    padding-left: 18px;
+}
+
+.logo img {
+    width: 140px;
+}
+
+.naslovnica-opis p {
+    font-size: 1rem;
+}
+
+main {
+    width: 90%;
+}
+
+.sideNav {
+    display: none;
+}
+
+#nav-check:checked ~ .sideNav {
+    width: 0;
+}
+
+.izbornik ul > li {
+    display: none;
+}
+
+.izbornik #nav-check {
+    display: block;
+}
+
+.sandwich-gumb {
+    display: flex;
+}
+
+.opis-slika {
+    flex-wrap: wrap;
+}
+
+.istaknuto {
+    height: 400px;
+    min-width: 250px;
+    overflow: hidden;
+}
+
+.istaknuto img {
+    width: 100%;
+    height: auto;
+}
+
+.header-section {
+    height: 200px;
+    background-position: 50% 85%;
+    background-size: 85% auto;
+}
+
+nav {
+    height: 100px;
+}
+
+#nav-check:checked ~ .sideNav {
+    width: 300px;
+}
+
+.sideNav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: calc(50% - 200px);
+	background-color: #3b3b3b;
+	overflow-x: hidden;
+	transition: 0.5s;
+    opacity: 1;
+	padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.slikaMuzeja {
+    width: 90%;
+    min-width: 1px;
+    margin-top: 20px;
+}
+
+.naslovnica-opis {
+    width: 90%;
+    padding-right: 0px;
+}
+
+.naslovnica-naslov {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 6%;
+}

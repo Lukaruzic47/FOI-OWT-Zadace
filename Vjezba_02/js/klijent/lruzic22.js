@@ -6,28 +6,29 @@
 /* ---------------- PRVI DIO ---------------- */
 // sadrži gumb koji prebacuje stranicu na mobilnu verziju
 
-document.getElementById("switchDesktopMobile").addEventListener("click", function () {
+mobileDesktopButton = document.getElementById("switchDesktopMobile");
+mobileDesktopButton.addEventListener("click", function () {
     requestDesktopSite();
-    console.log("Kliknuto na gumb za prebacivanje na mobilnu verziju");
-  });
+});
 
+var toggle = 0;
 function requestDesktopSite() {
-    console.log("Switching to mobile view");
-    if (
-        document.querySelector('meta[name="viewport"]').content === "width=1440px"
-    ) {
-        document.querySelector('meta[name="viewport"]').content = "width=400px";
-    } else {
-        document.querySelector('meta[name="viewport"]').content = "width=1440px";
+    let cssPath = document.getElementById("mobile-css");
+    if(!toggle){
+        mobileDesktopButton.value = da;
+        cssPath.type = 'text/css';
+        cssPath.href = '../css/mobile-view.css';
+        toggle = 1;
+        console.log(toggle);
+        return;
     }
-}
-
-// funckija za dohvaćanje verzije uređaja
-
-function getDeviceVersion() {
-    if (document.querySelector('meta[name="viewport"]').content === "width=1440px") {
-        return "desktop";
-    } else {
-        return "mobile";
+    if(toggle){
+        
+        toggle = 0
+        cssPath.type = 'text/css';
+        cssPath.href = '../css/mobile-view';
+        console.log(toggle);
+        return;
     }
+
 }
