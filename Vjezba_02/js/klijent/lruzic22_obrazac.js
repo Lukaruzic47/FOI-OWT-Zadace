@@ -40,7 +40,6 @@ function isFormEmpty(){
         if (inputs[i].value === "") {
             inputs[i].style.borderColor = "red";
             counter++;
-            console.log(inputs[i]);
             emptyFields.push(inputs[i]);
             isGood = false;
         }
@@ -50,7 +49,6 @@ function isFormEmpty(){
             textareas[i].style.borderColor = "red";
             counter++;
             emptyFields.push(textareas[i]);
-            console.log(textareas[i]);
             isGood = false;
         }
     }
@@ -59,7 +57,6 @@ function isFormEmpty(){
             select[i].style.borderColor = "red";
             emptyFields.push(select[i]);
             counter++;
-            console.log(select[i]);
             isGood = false;
         }
     }
@@ -86,8 +83,6 @@ form.addEventListener("submit", (e) => {
     }
 });
 
-
-
 /* ---------------- DRUGI DIO ---------------- */
 
 // Dohvaćamo element koji je prazan i postavljamo element s porukom kod njega
@@ -98,11 +93,17 @@ function focusEmptyForm(){
         emptyFields[0].style.border = "3px solid red";
         // provjera je li prazan element u emptyFields tipa input, textarea ili select
         if(emptyFields[0].tagName === "INPUT" || emptyFields[0].tagName === "TEXTAREA"){
-            modalMessage = "<div class='modalMessage'><p>Potrebno je popuniti ovo polje</p></div>";
-            emptyFields[0].innerHTML += modalMessage;
+            modalMessage = "<div class='modalMessage'><p>Potrebno je ispuniti ovo polje</p></div>";
+
+            modalMessage = document.createElement("div");
+            modalMessage.classList.add("modalMessage");
+            modalMessage.innerHTML = "<p>Potrebno je ispuniti ovo polje</p>";
+
+            emptyFields[0].parentNode.appendChild(modalMessage);
+            console.log(emptyFields[0]);
             console.log("Ovo je input ili textarea");
         }
-        else if(emptyFields[0].tagName === "SELECT"){
+        if(emptyFields[0].tagName === "SELECT"){
             modalMessage = "<div class='modalMessage'><p>Potrebno je odabrati opciju</p></div>";
             emptyFields[0].innerHTML += modalMessage;
             console.log("Ovo je select");
