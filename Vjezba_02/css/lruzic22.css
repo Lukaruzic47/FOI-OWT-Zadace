@@ -1018,17 +1018,15 @@ tr td img{
     cursor: pointer;
 }
 
-.modalMessage{
-    height: 50px;
-    width: 100px;
+#forma .modalMessage{
+    height: auto;
+    width: 220px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%, -50%); */
-    background-color: rgb(255, 0, 0);
+    transform: translate(80%, 60%);
+    background-color: rgb(200, 0, 0);
     padding: 20px;
+    color: white;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
     z-index: 100;
-    clip-path: polygon(0% 10%, 20% 10%, 25% 0%, 30% 10%, 100% 10%, 100% 100%, 0% 100%);
 }

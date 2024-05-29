@@ -1,11 +1,5 @@
 // Sadrži sve elemente oko validacije obrasca
 
-// + Cijela forma mora biti popunjena prije slanja
-// + Na pritisak gumba za slanje javlja pogrešku ako nisu svi podatci ispunjeni
-
-// Poruka se javlja kod elementa koji nije ispunjen
-// + label elementi polja koji nisu ispunjeni dobivaju crvenu boju
-
 // kod datuma nemože se odabrati datum najranije 2 dana u prošlosti i najkasnije 1 mjesec u prošlosti
 
 // kod padajućeg izbornika traži se obavezno odabir barem jedne opcije iz svake grupe opcija
@@ -24,46 +18,68 @@ form = document.getElementsByTagName("form");
 form = form[0];
 // dohvati gumb koji u sebi ima atribut type="submit"
 
-var emptyFields = [];
+var inputs = document.querySelectorAll("input");
+var textareas = document.querySelectorAll("textarea");
+var selects = document.querySelectorAll("select");
 
-function isFormEmpty(){
-    emptyFields = [];
+function isFormEmpty(event){
     // dohvaćamo sve input, textarea i select elemente
-    let inputs = document.querySelectorAll("input");
-    let textareas = document.querySelectorAll("textarea");
-    let select = document.querySelectorAll("select");
-
     let isGood = true;
-    let counter = 0;
-
+    poruka = "";
+    
     for (let i = 1; i < inputs.length; i++) {
-        if (inputs[i].value === "") {
+        if((inputs[i].type === "text" || inputs[i].type === "email") && inputs[i].value === ""){
             inputs[i].style.borderColor = "red";
-            counter++;
-            emptyFields.push(inputs[i]);
+            event.preventDefault();
+            poruka = "Polje ne smije biti prazno";
+            focusEmptyForm(poruka, inputs[i]);
+            // izlazimo iz funkcije jer nema smisla provjeravati ostale elemente
             isGood = false;
+            return isGood;
+        }
+        if(inputs[i].type === "number" && (inputs[i].value === "" || inputs[i].value < 1 || inputs[i].value > 100)){
+            inputs[i].style.borderColor = "red";
+            event.preventDefault();
+            poruka = "Unesite broj između 1 i 100";
+            focusEmptyForm(poruka, inputs[i]);
+            isGood = false;
+            return isGood;
+        }
+        
+        if(inputs[i].type === "date"){
+            let date = new Date();
+            let date2 = new Date(inputs[i].value);
+            // potrebno je pretvoriti date u cijeli broj jer se date.getTime() vraća u milisekundama
+            let diff = Math.floor((date2.getTime() - date.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+            // provjeravamo je li datum najranije 2 dana u prošlosti i najkasnije 1 mjesec u prošlosti
+            if(diff < -2 || diff > -30){
+                inputs[i].style.borderColor = "red";
+                event.preventDefault();
+                poruka = "Datum mora biti najranije 2 dana u prošlosti i najkasnije 1 mjesec u prošlosti";
+                focusEmptyForm(poruka, inputs[i]);
+                isGood = false;
+                return isGood;
+            }
         }
     }
     for (let i = 0; i < textareas.length; i++) {
         if (textareas[i].value === "") {
             textareas[i].style.borderColor = "red";
-            counter++;
-            emptyFields.push(textareas[i]);
             isGood = false;
         }
     }
     for (let i = 0; i < select.length; i++) {
         if (select[i].value === "") {
             select[i].style.borderColor = "red";
-            emptyFields.push(select[i]);
-            counter++;
             isGood = false;
         }
     }
-    console.log(counter);
-    console.log(isGood);
-    if (!isGood) {
+    if (isGood === false) {
         alert("Niste popunili sva polja");
+        event.preventDefault();
+        focusEmptyForm(poruka);
+        // spriječavamo slanje forme
+        
         return false;
     }
     else{
@@ -71,50 +87,76 @@ function isFormEmpty(){
     }
 }
 
-form.addEventListener("submit", (e) => {
-    if(isFormEmpty()){
-        console.log("Forma je popunjena");
-    }
-    else{
-        e.preventDefault();
-        focusEmptyForm();
-        console.log(emptyFields);
-        console.log("Niste popunili sva polja");
-    }
-});
+form.addEventListener("submit", (e) => isFormEmpty(e));
 
 /* ---------------- DRUGI DIO ---------------- */
 
-// Dohvaćamo element koji je prazan i postavljamo element s porukom kod njega
+// dohvaćamo poziciju prvog praznog elementa relativnu na zaslon
+function findElementLocation(element) {
+    let top = 0;
+    let left = 0;
+    let currentElement = element;
 
-function focusEmptyForm(){
-    if(emptyFields.length > 0){
-        emptyFields[0].focus();
-        emptyFields[0].style.border = "3px solid red";
-        // provjera je li prazan element u emptyFields tipa input, textarea ili select
-        if(emptyFields[0].tagName === "INPUT" || emptyFields[0].tagName === "TEXTAREA"){
-            modalMessage = "<div class='modalMessage'><p>Potrebno je ispuniti ovo polje</p></div>";
+    while (currentElement) {
+        top += currentElement.offsetTop;
+        left += currentElement.offsetLeft;
+    }
 
-            modalMessage = document.createElement("div");
-            modalMessage.classList.add("modalMessage");
-            modalMessage.innerHTML = "<p>Potrebno je ispuniti ovo polje</p>";
+    return { top, left };
+}
 
-            emptyFields[0].parentNode.appendChild(modalMessage);
-            console.log(emptyFields[0]);
-            console.log("Ovo je input ili textarea");
-        }
-        if(emptyFields[0].tagName === "SELECT"){
-            modalMessage = "<div class='modalMessage'><p>Potrebno je odabrati opciju</p></div>";
-            emptyFields[0].innerHTML += modalMessage;
-            console.log("Ovo je select");
-        }
+function deleteAllModalMessages(){
+    if(document.querySelector(".modalMessage") !== null){
+        document.querySelector(".modalMessage").remove();
     }
 }
 
-// provjeravamo prazne elemente onchange te im uklanjamo crvenu boju ako su popunjeni
+function focusEmptyForm(message, element){
+    deleteAllModalMessages();
 
+        let emptyField = element;
+        emptyField.focus();
+        emptyField.style.border = "3px solid red";
+
+        modalMessage = document.createElement("div");
+        modalMessage.classList.add("modalMessage");
+        modalMessage.style.top = findElementLocation(emptyField).top + "px";
+        modalMessage.style.left = findElementLocation(emptyField).left + "px";
+        modalMessage.innerHTML = "<p>" + message + "</p>";
+
+        emptyField.parentNode.appendChild(modalMessage);
+
+        modalMessage = "<div class='modalMessage'><p>Potrebno je odabrati opciju</p></div>";
+        emptyField.innerHTML += modalMessage;
+}
+
+document.addEventListener("keydown", (e) => {
+    deleteAllModalMessages();
+    for(let i = 0; i < inputs.length; i++){
+        if(inputs[i].value === ""){
+            inputs[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+            textareas[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+            selects[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+        }
+    }
+});
+document.addEventListener("reset", (e) => {
+    deleteAllModalMessages();
+    for(let i = 0; i < inputs.length; i++){
+        if(inputs[i].value === ""){
+            inputs[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+            textareas[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+            selects[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+        }
+    }
+});
 form.addEventListener("change", (e) => {
-    if(e.target.value !== ""){
-        e.target.style.border = "1px solid rgba(0, 0, 0, 0.4)";
+    deleteAllModalMessages();
+    for(let i = 0; i < inputs.length; i++){
+        if(inputs[i].value === ""){
+            inputs[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+            textareas[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+            selects[i].style.border = "1px solid rgba(0, 0, 0, 0.4)";
+        }
     }
 });
