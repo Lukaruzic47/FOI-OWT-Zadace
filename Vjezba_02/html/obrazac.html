@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Luka Ružić">
+		<meta name="keywords" content="Muzej, Porsche, Galerija">
+		<link rel="stylesheet" href="./../css/lruzic22.css">
+		<link rel="stylesheet" href="../css/navigacijaResponsive.css">
+		<link rel="stylesheet" href="../css/galerijaResponsive.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+		<title>Obrazac</title>
+	</head>
+<body>
+    <header>
+        <script src="../js/lruzic22.js"></script>
+        <nav>
+            <!-- Sadrži naslov i logo -->
+            <div class="logo">
+                <a href="index.html"><img src="../resursi/slike/pngwing.com.png" alt=""></a>
+            </div>
+            <div class="izbornik">
+                <ul>
+                    <li>
+                        <a href="index.html">NASLOVNICA</a>
+                    </li>
+                    <li>
+                        <a href="dokumentacija.html">DOKUMENTACIJA</a>
+                    </li>
+                    <li>
+                        <a href="anketaMuzeja.html">ANKETA</a>
+                    </li>
+                    <li>
+                        <a href="galerijaSlika.html">GALERIJA</a>
+                    </li>
+                    <li>
+                        <a href="inventarMuzeja.html">INVENTAR</a>
+                    </li>
+                    <li>
+                        <a href="oAutoru.html" id="aktivno">O AUTORU</a>
+                    </li>
+                    <li>
+                        <a href="obrazac.html">OBRAZAC</a>
+                    </li>
+                </ul>
+            </div>
+                <input type="checkbox" id="nav-check">
+                <label for="nav-check" class="sandwich-gumb">
+                    <span></span>
+                </label>
+                <div class="sideNav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <img src="../resursi/slike/pngwingWhite.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">NASLOVNICA</a>
+                        </li>
+                        <li>
+                            <a href="dokumentacija.html">DOKUMENTACIJA</a>
+                        </li>
+                        <li>
+                            <a href="anketaMuzeja.html">ANKETA</a>
+                        </li>
+                        <li>
+                            <a href="galerijaSlika.html">GALERIJA</a>
+                        </li>
+                        <li>
+                            <a href="inventarMuzeja.html">INVENTAR</a>
+                        </li>
+                        <li>
+                            <a href="oAutoru.html" class="aktivno">O AUTORU</a>
+                        </li>
+                        <li>
+                            <a href="obrazac.html">OBRAZAC</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+        <div class="anketa-header-section">
+            <h1 class="fs-1 naslovnica-naslov">Obrazac</h1>
+        </div>
+    </header>
+    <main>
+        <form action="/owt/izlozba" method="post">
+            <div class="prvi-red obrazac">
+                <label for="naziv">Naziv automobila:</label><br>
+                <input type="text" id="naziv" name="naziv" required><br>
+                <label for="godina">Godina proizvodnje:</label><br>
+                <input type="number" id="godina" name="godina" required><br>
+                <label for="opis">Opis automobila:</label><br>
+                <textarea id="opis" name="opis" required></textarea><br>
+                <label for="top-speed">Najveća brzina:</label><br>
+                <input type="number" id="top-speed" name="top-speed" required><br>
+                <label for="snaga">Snaga motora:</label><br>
+                <input type="number" id="snaga" name="snaga" required><br>
+                <label for="slika">Slika automobila:</label><br>
+                <input type="file" id="slika" name="slika" required><br>
+            </div>
+            <div class="peti-red">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <br>
+    </main>
+    <footer>
+        <div>
+            <a href="" target="_blank">
+                <img src="../resursi/slike/HTML5.png" alt="">
+            </a>
+            <a href="" target="_blank">
+                <img src="../resursi/slike/by.png" alt="">
+            </a>
+        </div>
+        <a href="">
+            <p>2024 &copy; Luka Ružić</p>
+        </a>
+    </footer>
+</body>
+</html>

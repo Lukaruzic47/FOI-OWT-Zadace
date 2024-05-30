@@ -4,7 +4,7 @@
     }
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1480px) {
 	.izbornik {
 		margin-right: 3%;
 	}
@@ -48,7 +48,7 @@
     }
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1250px) {
     .sideNav {
         display: none;
 	}
@@ -62,7 +62,7 @@
     }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1250px) {
 	.izbornik ul > li {
 		display: none;
 	}
