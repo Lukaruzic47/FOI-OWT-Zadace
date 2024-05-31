@@ -18,17 +18,13 @@ var inputs = document.querySelectorAll("input");
 var textareas = document.querySelector("textarea");
 var selects = document.querySelector("select");
 
-console.log("dohvaćeni elementi");
-
 function isFormEmpty(event){
-    console.log("pozvana funkcija");
     // dohvaćamo sve input, textarea i select elemente
     let isGood = true;
     poruka = "";
     
     for (let i = 1; i < inputs.length; i++) {
         if((inputs[i].type === "text" || inputs[i].type === "email" || inputs[i].type === "file") && inputs[i].value === ""){
-            console.log("prazno polje1");
             inputs[i].style.borderColor = "red";
             event.preventDefault();
             poruka = "Polje ne smije biti prazno";
@@ -39,7 +35,6 @@ function isFormEmpty(event){
         }
 
         if(inputs[i].type === "number" && (inputs[i].value === "" || inputs[i].value < 1 || inputs[i].value > 100)){
-            console.log("prazno polje2");
             inputs[i].style.borderColor = "red";
             event.preventDefault();
             poruka = "Unesite broj između 1 i 100";

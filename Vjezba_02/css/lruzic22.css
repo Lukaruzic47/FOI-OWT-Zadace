@@ -693,7 +693,7 @@ figcaption h5 {
 .prva-slika div {
 	height: calc(100% - 4px);
 	transition: transform 0.3s ease-in-out;
-	background-image: url(../resursi/slike/1990_porsche_911_carrera_4.jpg);
+	background-image: url(/slike/1990_porsche_911_carrera_4.jpg);
 	background-position: 0% 70%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -735,7 +735,7 @@ figcaption h5 {
 .cetvrta-slika div {
 	height: calc(100% - 4px);
 	transition: transform 0.3s ease-in-out;
-	background-image: url(../resursi/slike/porsche-4594693_1280.jpg);
+	background-image: url(/slike/porsche-4594693_1280.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -749,7 +749,7 @@ figcaption h5 {
 .peta-slika div {
 	height: calc(100% - 4px);
 	transition: transform 0.3s ease-in-out;
-	background-image: url(../resursi/slike/porsche-3495405_1280.jpg);
+	background-image: url(/slike/porsche-3495405_1280.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -763,7 +763,7 @@ figcaption h5 {
 .sesta-slika div {
 	height: calc(100% - 4px);
 	transition: transform 0.3s ease-in-out;
-	background-image: url(../resursi/slike/porsche-5665390_1280.jpg);
+	background-image: url(/slike/porsche-5665390_1280.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -777,7 +777,7 @@ figcaption h5 {
 .sedma-slika div {
 	height: calc(100% - 4px);
 	transition: transform 0.3s ease-in-out;
-	background-image: url(../resursi/slike/stuttgartMuseum.jpg);
+	background-image: url(/slike/stuttgartMuseum.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -791,7 +791,7 @@ figcaption h5 {
 .osma-slika div {
 	height: calc(100% - 4px);
 	transition: transform 0.3s ease-in-out;
-	background-image: url(../resursi/slike/porsche-normal.jpg);
+	background-image: url(/slike/porsche-normal.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -916,7 +916,7 @@ tr td img {
 	margin-top: 2px;
 	height: 600px;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-	background-image: url("../resursi/slike/the-20new-202024-20porsche-20panamera-206.jpg");
+	background-image: url("/slike/the-20new-202024-20porsche-20panamera-206.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

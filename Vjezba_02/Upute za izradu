@@ -81,7 +81,7 @@ Poslužiteljska strana:
 korištenjem Express okvira.
 2. NodeJS poslužitelj poslužuje Vaše HTML stranice kao statične stranice, svaku stranicu
 posebno, a ne cijeli direktorij. Svakoj stranici se pristupa na putanji koja ima prva tri slova
-naziva datoteke. Na primjer datoteka oAutoru.html NodeJS web poslužitelj poslužuje na
+naziva datoteke. Na primjer datoteka /oau NodeJS web poslužitelj poslužuje na
 putanji “/oau” te se pristupa s http://spider.foi.hr:{vašPort}/oau. Iznimka je index.html koja
 se poslužuje na korijenskoj putanji “/” te se pristupa s http://spider.foi.hr:{vašPort}.
 3. NodeJS poslužuje direktorij klijentskog JavaScript-a na putanji “/jsk”, CSS direktorij na

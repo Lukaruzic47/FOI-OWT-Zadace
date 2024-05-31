@@ -19,14 +19,12 @@ function requestDesktopSite(argument) {
         mobileDesktopButton.innerHTML = "Prebaci na desktop verziju";
         cssPath.type = "text/css";
 		cssPath.href = "../css/mobile-view.css";
-        console.log("postavljeno na mobilnu verziju");
 		return;
     }
 	if (argument === "mobile") {
 		setCookie("device", "desktop", 30);
 		mobileDesktopButton.innerHTML = "Prebaci na mobilnu verziju";
 		cssPath.href = " ";
-		console.log(getCookie("device"));
 		return;
 	}
 	if (argument === "desktop") {
@@ -34,7 +32,6 @@ function requestDesktopSite(argument) {
 		cssPath.type = "text/css";
 		cssPath.href = "../css/mobile-view.css";
 		setCookie("device", "mobile", 30);
-		console.log(getCookie("device"));
 		return;
 	}
 }
@@ -83,4 +80,3 @@ function checkCookie() {
 }
 
 document.addEventListener("DOMContentLoaded", checkCookie);
-console.log(getCookie("device"));
