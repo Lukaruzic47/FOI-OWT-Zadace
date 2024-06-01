@@ -1,3 +1,4 @@
+const dodajTablicu = require('./js/server/dajTablicu.js');
 
 function dajPort(korime) {
     var os = require("os");
@@ -40,18 +41,98 @@ server.use("/obr", express.static(putanja + "/html/obrazac.html"));
 server.use("/vij", express.static(putanja + "/html/vijest.html"));
 
 function displayData(data) {
-    console.log(data);
+	data.type("html");
+	data.write("<!DOCTYPE html>");
+	data.write("<html>");
+	data.write("<body>");
+	data.write("<h1>Popis eksponata</h1>");
+	data.write("<form action='/popis' method='get'>");
+	data.write("<button type='submit' value='true' name='Prikazi_popis'>Osvježi podatke</button>");
+	data.write("</form>");
+	data.write(dodajTablicu.dajTablicu());
+	data.write("</body>");
+	data.write("<script src='/jsk/lruzic22.js'></script>");
+	data.write("</html>");
+	data.end();
 }
 
 server.get("/popis", (zahtjev, odgovor) => {
-    const csvDatoteka = putanja + "/resursi/izlozba.csv";
-	const jsonDatoteka = putanja + "/resursi/izlozba.json";
+    let csvDatoteka = putanja + "/resursi/izlozba.csv";
+	let jsonDatoteka = putanja + "/resursi/izlozba.json";
+	let jsonPodatci = "";
+	// provjeravamo postoji li parametar "reset" u URL-u
+	if (zahtjev.query["Prikazi_popis"] === "true") {
+		ds.readFile(jsonDatoteka, "utf-8", (greska, podatci) => {
+			if (greska) {
+				odgovor.status(500);
+				odgovor.send("Pogreška u čitanju datoteke!");
+				console.log("radi");
+				return;
+			}
+			jsonPodatci = JSON.parse(podatci);
+			
+			let csvPodatci = "";
+			for (let i = 0; i < jsonPodatci.length; i++) {
+				const red = jsonPodatci[i];
+				csvPodatci += "" + red.name + "#" + red.year + "#" + red.desc + "#" + red.top_speed + "#" + red.power + "\n";
+			}
+			
+				ds.writeFile(csvDatoteka, csvPodatci, "utf-8", (greska) => {
+				if (greska) {
+					odgovor.status(500);
+					odgovor.send("Pogreška u zapisivanju datoteke!");
+					return;
+				}
+					
+				displayData(odgovor);
+			});
+		});
+	}
+	else{
+		displayData(odgovor);
+	}
+});
+
+server.get("/brisi", (zahtjev, odgovor) => {
+	let urlParametar = zahtjev.query["nazivAutomobila"];
+
+	if(urlParametar === undefined){
+		odgovor.status(400);
+		odgovor.send("Niste poslali parametar!");
+		return;
+	}
+
+	let csvDatoteka = putanja + "/resursi/izlozba.csv";
+
+	ds.readFile(csvDatoteka, "utf-8", (greska, podatci) => {
+		if (greska) {
+			odgovor.status(500);
+			odgovor.send("Pogreška u čitanju datoteke!");
+			return;
+		}
+
+		// potrebno je pronaći redak u kojem se nalazi vozilo koje se želi obrisati
+		let redovi = podatci.split("\n");
+		let noviPodatci = "";
+		
+		noviPodatci = redovi.filter(red => !red.includes(urlParametar)).join("\n");
+		
+		ds.writeFile(csvDatoteka, noviPodatci, "utf-8", (greska) => {
+			if (greska) {
+				odgovor.status(500);
+				odgovor.send("Pogreška u zapisivanju datoteke!");
+				return;
+			}
+
+			odgovor.redirect("/popis");
+		});
+	});
 
 });
 
 server.use((zahtjev, odgovor) => {
 	odgovor.status(404); // stausni kod 404
-	odgovor.send("Stranica nije pronaÄ‘ena!");
+	odgovor.send("Stranica nije pronađena!");
 });
 
 server.listen(port, () => {

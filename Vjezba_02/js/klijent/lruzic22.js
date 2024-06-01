@@ -5,34 +5,37 @@
 
 /* ---------------- PRVI DIO ---------------- */
 // sadrži gumb koji prebacuje stranicu na mobilnu verziju
-
-mobileDesktopButton = document.getElementById("switchDesktopMobile");
-mobileDesktopButton.addEventListener("click", function () {
+if(mobileDesktopButton = document.getElementById("switchDesktopMobile") === null){
+}
+else{
+	mobileDesktopButton = document.getElementById("switchDesktopMobile")
+	mobileDesktopButton.addEventListener("click", function () {
 	requestDesktopSite(getCookie("device"));
-});
-
-function requestDesktopSite(argument) {
-	// ako je argument jednak trenutnom stanju, ne radi ništa
-	let cssPath = document.getElementById("mobile-css");
-
-    if(argument === "onload"){
-        mobileDesktopButton.innerHTML = "Prebaci na desktop verziju";
-        cssPath.type = "text/css";
-		cssPath.href = "../css/mobile-view.css";
-		return;
-    }
-	if (argument === "mobile") {
-		setCookie("device", "desktop", 30);
-		mobileDesktopButton.innerHTML = "Prebaci na mobilnu verziju";
-		cssPath.href = " ";
-		return;
-	}
-	if (argument === "desktop") {
-		mobileDesktopButton.innerHTML = "Prebaci na desktop verziju";
-		cssPath.type = "text/css";
-		cssPath.href = "../css/mobile-view.css";
-		setCookie("device", "mobile", 30);
-		return;
+	});
+	
+	function requestDesktopSite(argument) {
+		// ako je argument jednak trenutnom stanju, ne radi ništa
+		let cssPath = document.getElementById("mobile-css");
+		
+		if(argument === "onload"){
+			mobileDesktopButton.innerHTML = "Prebaci na desktop verziju";
+			cssPath.type = "text/css";
+			cssPath.href = "../css/mobile-view.css";
+			return;
+		}
+		if (argument === "mobile") {
+			setCookie("device", "desktop", 30);
+			mobileDesktopButton.innerHTML = "Prebaci na mobilnu verziju";
+			cssPath.href = " ";
+			return;
+		}
+		if (argument === "desktop") {
+			mobileDesktopButton.innerHTML = "Prebaci na desktop verziju";
+			cssPath.type = "text/css";
+			cssPath.href = "../css/mobile-view.css";
+			setCookie("device", "mobile", 30);
+			return;
+		}
 	}
 }
 
@@ -80,3 +83,20 @@ function checkCookie() {
 }
 
 document.addEventListener("DOMContentLoaded", checkCookie);
+
+/* ---------------- TREĆI DIO ---------------- */
+// dohvaćamo prvi td element nakon svakog tr elementa
+let tdElements = document.querySelectorAll("tr td:first-child");
+
+tdElements.forEach((element) => {
+	element.addEventListener("click", function () {
+
+		let confirmDelete = confirm("Želite li obrisati ovaj redak?");
+		if (confirmDelete) {
+
+			console.log(element.innerHTML);
+			window.location.href = "/brisi?nazivAutomobila=" + element.innerHTML;
+		}
+	});
+});
+
